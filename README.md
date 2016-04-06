@@ -1,0 +1,1 @@
+pyramid_kombu_sample README
