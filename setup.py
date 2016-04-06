@@ -13,6 +13,8 @@ requires = [
     'pyramid_chameleon',
     'pyramid_debugtoolbar',
     'waitress',
+    'kombu',
+    'redis'
     ]
 
 setup(name='pyramid_kombu_sample',

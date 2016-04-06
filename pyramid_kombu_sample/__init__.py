@@ -1,3 +1,4 @@
+from kombu.connection import Connection
 from pyramid.config import Configurator
 
 
@@ -9,4 +10,7 @@ def main(global_config, **settings):
     config.add_static_view('static', 'static', cache_max_age=3600)
     config.add_route('home', '/')
     config.scan()
+
+    config.registry.queue_connection = Connection('redis://localhost:6379/')
+
     return config.make_wsgi_app()
